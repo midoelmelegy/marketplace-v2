@@ -347,7 +347,7 @@ export default ({
             buttonProps={{
               corners: 'square',
             }}
-            buttonChildren={isSmallDevice ? <FontAwesomeIcon icon={faBolt} />Buy Now : "Buy Now"}
+            buttonChildren={isSmallDevice ? <FontAwesomeIcon icon={faBolt} /> : "Buy Now"}
           />
           {addToCartEnabled ? (
             <AddToCart
