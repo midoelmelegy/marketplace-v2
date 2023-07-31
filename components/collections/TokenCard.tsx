@@ -356,7 +356,7 @@ export default ({
               isSmallDevice ? (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <FontAwesomeIcon icon={faBolt} />
-                  <span>Buy Now</span>
+                  <span>Buy</span>
                 </div>
               ) : (
                 "Buy Now"
