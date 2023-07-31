@@ -51,7 +51,7 @@ export default ({
     mediaType === 'other' || mediaType === 'html' || mediaType === null
   const { routePrefix, proxyApi } = useMarketplaceChain()
   const tokenIsInCart = token && token?.isInCart
-  const isOwner = token?.token?.owner?.toLowerCase() !== address?.toLowerCase()
+  const isNotOwner = token?.token?.owner?.toLowerCase() !== address?.toLowerCase()
 
   const is1155 = token?.token?.kind === 'erc1155'
 
@@ -167,7 +167,7 @@ export default ({
               borderRadius: 0,
               aspectRatio: '1/1',
             }}
-            staticOnly={showPreview}
+            preview={showPreview}
             audioOptions={{
               onPlay: (e) => {
                 onMediaPlayed?.(e)
@@ -192,7 +192,7 @@ export default ({
         href={`/${routePrefix}/asset/${token?.token?.contract}:${token?.token?.tokenId}`}
       >
         <Flex
-          css={{ p: '$4', minHeight: 132, cursor: 'pointer' }}
+          css={{ p: '$4', cursor: 'pointer', '@lg': { minHeight: 132 } }}
           direction="column"
         >
           <Flex css={{ mb: '$4' }} align="center" justify="between">
@@ -323,16 +323,21 @@ export default ({
           ) : null}
         </Flex>
       </Link>
-      {isOwner && token?.market?.floorAsk?.price?.amount ? (
+      {isNotOwner && token?.market?.floorAsk?.price?.amount ? (
         <Flex
           className="token-button-container"
           css={{
             width: '100%',
             transition: 'bottom 0.25s ease-in-out',
-            position: 'absolute',
-            bottom: -44,
-            left: 0,
-            right: 0,
+            '@sm': {
+              position: 'relative'
+            },
+            '@lg': {
+              position: 'absolute',
+              bottom: -44,
+              left: 0,
+              right: 0,
+            },
             gap: 1,
           }}
         >
