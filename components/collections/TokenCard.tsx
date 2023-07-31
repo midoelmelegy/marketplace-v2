@@ -355,7 +355,7 @@ export default ({
             buttonChildren={
               isSmallDevice ? (
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <FontAwesomeIcon icon={faBolt} />
+                  <FontAwesomeIcon icon={faBolt} style={{ marginRight: '5px' }} />
                   <span>Buy</span>
                 </div>
               ) : (
