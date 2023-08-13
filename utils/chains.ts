@@ -6,6 +6,10 @@ import {
   scrollTestnet,
   Chain,
 } from 'wagmi/chains'
+import { Currency } from '@reservoir0x/reservoir-kit-ui'
+import wrappedContracts from './wrappedContracts'
+import { zeroAddress } from 'viem'
+import usdcContracts from './usdcContracts'
 
 //Chains that are missing from wagmi:
 export const zoraTestnet = {
@@ -47,6 +51,21 @@ export type ReservoirChain = Chain & {
   coingeckoId?: string
   collectionSetId?: string
   community?: string
+  listingCurrencies?: Currency[]
+}
+
+const nativeCurrencyBase = {
+  contract: zeroAddress,
+  symbol: 'ETH',
+  decimals: 18,
+  coinGeckoId: 'ethereum',
+}
+
+const usdcCurrencyBase = {
+  contract: '',
+  symbol: 'USDC',
+  decimals: 6,
+  coinGeckoId: 'usd-coin',
 }
 
 export const DefaultChain: ReservoirChain = {
@@ -75,6 +94,19 @@ export const DefaultChain: ReservoirChain = {
   coingeckoId: 'goerli-eth',
   collectionSetId: process.env.NEXT_PUBLIC_GOERLI_COLLECTION_SET_ID,
   community: process.env.NEXT_PUBLIC_GOERLI_COMMUNITY,
+  listingCurrencies: [
+    nativeCurrencyBase,
+    {
+      ...usdcCurrencyBase,
+      contract: usdcContracts[goerli.id],
+    },
+    {
+      symbol: 'WETH',
+      contract: wrappedContracts[goerli.id],
+      decimals: 18,
+      coinGeckoId: 'weth',
+    },
+  ],
 }
 
 export default [
@@ -102,6 +134,13 @@ export default [
     coingeckoId: 'matic-network',
     collectionSetId: process.env.NEXT_PUBLIC_MUMBAI_COLLECTION_SET_ID,
     community: process.env.NEXT_PUBLIC_MUMBAI_COMMUNITY,
+    listingCurrencies: [
+      { ...nativeCurrencyBase, coinGeckoId: 'matic-network' },
+      {
+        ...usdcCurrencyBase,
+        contract: usdcContracts[polygonMumbai.id],
+      },
+    ],
   },
   {
     ...baseGoerli,
