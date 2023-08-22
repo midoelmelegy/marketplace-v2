@@ -89,6 +89,7 @@ const List: FC<Props> = ({
         collectionId={contract}
         tokenId={tokenId}
         currencies={listingCurrencies}
+        enableOnChainRoyalties={true}
         onClose={(data, stepData, currentStep) => {
           if (mutate && currentStep == ListStep.Complete) mutate()
         }}
