@@ -60,7 +60,7 @@ export default ({
     mediaType === 'glb'
   const { routePrefix, proxyApi } = useMarketplaceChain()
   const tokenIsInCart = token && token?.isInCart
-  const isNotOwner = token?.token?.owner?.toLowerCase() !== address?.toLowerCase()
+  const isOwner = token?.token?.owner?.toLowerCase() !== address?.toLowerCase()
 
   const is1155 = token?.token?.kind === 'erc1155'
 
