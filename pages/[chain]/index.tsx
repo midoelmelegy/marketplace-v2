@@ -468,9 +468,6 @@ const Home: NextPage<any> = ({ ssr }) => {
                           <Text style="h5" as="h5" ellipsify css={{ flex: 1 }}>
                             {collection?.name}
                           </Text>
-                          <OpenSeaVerified
-            openseaVerificationStatus={collection?.collection?.openseaVerificationStatus}
-          />
                         </Flex>
 
                         <Box
