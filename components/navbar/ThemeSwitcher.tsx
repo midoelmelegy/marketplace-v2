@@ -46,7 +46,7 @@ const ThemeSwitcher = () => {
         >
           <FontAwesomeIcon icon={faMoon} width={16} height={16} />
         </ToggleGroupItem>
-      </ToggleGroupRoot>
+      </ToggleGroup>
     )
   }
 
