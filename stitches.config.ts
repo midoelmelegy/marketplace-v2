@@ -5,6 +5,9 @@ import {
   blueDark,
   slateDark,
   greenDark,
+  iris,
+  irisDark,
+  gray,
   green,
   blueDarkA,
   whiteA,
@@ -34,6 +37,7 @@ export const { createTheme, keyframes, styled, globalCss, getCssText } =
   createStitches({
     theme: {
       colors: {
+        ...gray,
         ...crimson,
         ...blue,
         ...blueA,
@@ -41,6 +45,7 @@ export const { createTheme, keyframes, styled, globalCss, getCssText } =
         ...red,
         ...whiteA,
         ...blackA,
+        ...iris,
         ...green,
         ...indigo,
 
@@ -211,7 +216,7 @@ export const { createTheme, keyframes, styled, globalCss, getCssText } =
       sm: '(min-width: 600px)',
       md: '(min-width: 900px)',
       lg: '(min-width: 1200px)',
-      xl: '(min-width: 1400px)',
+      xl: '(min-width: 1820px)',
       bp300: '(min-width: 300px)',
       bp400: '(min-width: 400px)',
       bp500: '(min-width: 500px)',
@@ -241,6 +246,7 @@ export const darkTheme = createTheme({
     ...blueDarkA,
     ...slateDark,
     ...greenDark,
+    ...irisDark,
     ...whiteA,
     ...redDark,
     ...blackA,
