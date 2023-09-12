@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { Box, Flex, Button } from '../primitives'
+import { Box, Flex, Card } from '../primitives'
 import GlobalSearch from './GlobalSearch'
 import { useRouter } from 'next/router'
 import { useHotkeys } from 'react-hotkeys-hook'
