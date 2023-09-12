@@ -34,6 +34,7 @@ import ToastContextProvider from 'context/ToastContextProvider'
 import supportedChains from 'utils/chains'
 import { useMarketplaceChain } from 'hooks'
 import ChainContextProvider from 'context/ChainContextProvider'
+import { WebsocketContextProvider } from 'context/WebsocketContextProvider'
 import ReferralContextProvider, {
   ReferralContext,
 } from 'context/ReferralContextProvider'
@@ -82,7 +83,7 @@ function AppWrapper(props: AppProps & { baseUrl: string }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="dark"
+      defaultTheme="light"
       value={{
         dark: darkTheme.className,
         light: 'light',
@@ -186,6 +187,8 @@ function MyApp({
           theme={reservoirKitTheme}
         >
           <CartProvider feesOnTopBps={["0x4c31e558393312a1d3bE14C45A3656A2e915F53D:50"]}>
+                        <WebsocketContextProvider>
+            
             <Tooltip.Provider>
               <RainbowKitProvider
                 chains={chains}
@@ -197,6 +200,8 @@ function MyApp({
                 </ToastContextProvider>
               </RainbowKitProvider>
             </Tooltip.Provider>
+                                      </WebsocketContextProvider>
+
           </CartProvider>
         </ReservoirKitProvider>
       </ThemeProvider>
