@@ -469,7 +469,7 @@ const Home: NextPage<any> = ({ ssr }) => {
                             {collection?.name}
                           </Text>
                           <OpenSeaVerified
-            openseaVerificationStatus={collection?.openseaVerificationStatus}
+            openseaVerificationStatus={collection?.collection?.openseaVerificationStatus}
           />
                         </Flex>
 
