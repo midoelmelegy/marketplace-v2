@@ -219,14 +219,14 @@ const Navbar = () => {
           <Box>
             <HoverCard.Root openDelay={120}>
               <HoverCard.Trigger>
-                <a target="_blank" href={`https://docs.reservoir.tools/docs`}>
+                <a target="_blank" href={`https://testnets.seaport.market`}>
                   <NavItem>Testnets</NavItem>
                 </a>
               </HoverCard.Trigger>
               <HoverCard.Content sideOffset={24} align="start">
                 <Card css={{ p: 24, width: 240 }}>
                   <Flex css={{ gap: '$4' }} direction="column">
-                    <a href={`https://testnets.reservoir.tools`}>
+                    <a href={`https://testnets.seaport.market`}>
                       <NavItem>Testnet Explorer</NavItem>
                     </a>
                   </Flex>
