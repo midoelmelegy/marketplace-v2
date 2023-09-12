@@ -14,7 +14,7 @@ const ThemeSwitcher = () => {
 
   if (isMobile) {
     return (
-      <ToggleGroupRoot
+      <ToggleGroup
         type="single"
         defaultValue={theme}
         css={{
