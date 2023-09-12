@@ -34,10 +34,6 @@ const developerSectionLinks = [
     href: '/collection-rankings',
   },
   {
-    name: 'Sell',
-    href: '/portfolio',
-  },
-  {
     name: 'Testnets',
     href: 'https://testnets.seaport.market',
   },
