@@ -121,14 +121,7 @@ const Navbar = () => {
       >
         <Flex align="center">
           <Link href={`/${routePrefix}`}>
-            <Box css={{ cursor: 'pointer' }}>
-              <Image
-                src="/reservoirLogo.svg"
-                width={36}
-                height={36}
-                alt="Reservoir"
-              />
-            </Box>
+            
           </Link>
           <Flex
             align="center"
@@ -137,11 +130,8 @@ const Navbar = () => {
               ml: '$5',
             }}
           >
-            <Link href={`/${routePrefix}`}>
-              <NavItem>Featured</NavItem>
-            </Link>
             <Link href={`/${routePrefix}/collections/trending`}>
-              <NavItem>NFTs</NavItem>
+              <NavItem>Ranks</NavItem>
             </Link>
 
             {/* <HoverCard.Root openDelay={200}>
