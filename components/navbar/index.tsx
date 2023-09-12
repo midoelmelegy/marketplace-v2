@@ -121,7 +121,23 @@ const Navbar = () => {
       >
         <Flex align="center">
           <Link href={`/${routePrefix}`}>
-            
+            <Box css={{ width: 136, cursor: 'pointer' }}>
+              {theme == 'dark' ? (
+                <Image
+                  src="/seaportMarketLogo.svg"
+                  width={136}
+                  height={40}
+                  alt="SeaPort"
+                />
+              ) : (
+                <Image
+                  src="/seaportMarketLogoLight.svg"
+                  width={136}
+                  height={40}
+                  alt="SeaPort"
+                />
+              )}
+            </Box>
           </Link>
           <Flex
             align="center"
@@ -179,13 +195,13 @@ const Navbar = () => {
           </Flex>
         </Flex>
       </Box>
-      <Box css={{ flex: 1, px: '$5' }}>
+      <Box css={{ flex: 1, px: '$5', width: '100%' }}>
         <GlobalSearch
           ref={searchRef}
           placeholder="Search collections and addresses"
           containerCss={{ width: '100%' }}
           key={router.asPath}
-        />
+            />
       </Box>
 
       <Flex
@@ -204,7 +220,7 @@ const Navbar = () => {
             <HoverCard.Root openDelay={120}>
               <HoverCard.Trigger>
                 <a target="_blank" href={`https://www.seaport.market`}>
-                  <NavItem>Mainnet</NavItem>
+                  <NavItem>Mainnets</NavItem>
                 </a>
               </HoverCard.Trigger>
               <HoverCard.Content sideOffset={24} align="start">
