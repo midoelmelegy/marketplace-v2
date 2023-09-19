@@ -232,20 +232,6 @@ const HamburgerMenu = () => {
                   Rankings
                 </Text>
               </Link>
-              <Link href="/portfolio" legacyBehavior>
-                <Text
-                  style="subtitle1"
-                  css={{
-                    borderBottom: '1px solid $gray4',
-                    cursor: 'pointer',
-                    pb: '$4',
-                    pt: '24px',
-                    width: '100%',
-                  }}
-                >
-                  Sell
-                </Text>
-              </Link>
             </Flex>
             <Box>
               <ConnectWalletButton />
