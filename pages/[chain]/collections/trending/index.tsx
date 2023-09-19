@@ -129,7 +129,7 @@ const IndexPage: NextPage<Props> = ({ ssr }) => {
             }}
           >
             <Text style="h4" as="h4">
-              Rankings
+              Trending Collections
             </Text>
             <Flex align="center" css={{ gap: '$4' }}>
               <CollectionsTimeDropdown

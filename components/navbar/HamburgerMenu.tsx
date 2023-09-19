@@ -146,7 +146,7 @@ const HamburgerMenu = () => {
                   pt: '24px',
                 }}
               >
-                Rankings
+                Trending Collections
               </Text>
             </Link>
 
@@ -229,7 +229,7 @@ const HamburgerMenu = () => {
                     width: '100%',
                   }}
                 >
-                  Rankings
+                  Trending Collections
                 </Text>
               </Link>
               <Link href="/portfolio" legacyBehavior>
