@@ -218,7 +218,7 @@ const HamburgerMenu = () => {
             }}
           >
             <Flex direction="column">
-              <Link href="/collection-rankings" legacyBehavior>
+              <Link href="/ethereum/collection-rankings" legacyBehavior>
                 <Text
                   style="subtitle1"
                   css={{
@@ -230,6 +230,20 @@ const HamburgerMenu = () => {
                   }}
                 >
                   Rankings
+                </Text>
+              </Link>
+              <Link href="/portfolio" legacyBehavior>
+                <Text
+                  style="subtitle1"
+                  css={{
+                    borderBottom: '1px solid $gray4',
+                    cursor: 'pointer',
+                    pb: '$4',
+                    pt: '24px',
+                    width: '100%',
+                  }}
+                >
+                  Portfolio
                 </Text>
               </Link>
             </Flex>
