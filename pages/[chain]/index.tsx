@@ -25,7 +25,6 @@ import { styled } from 'stitches.config'
 import { useTheme } from 'next-themes'
 import ChainToggle from 'components/common/ChainToggle'
 import optimizeImage from 'utils/optimizeImage'
-import { OpenSeaVerified } from 'components/common/OpenSeaVerified'
 import { MarkdownLink } from 'components/primitives/MarkdownLink'
 import { useRouter } from 'next/router'
 
