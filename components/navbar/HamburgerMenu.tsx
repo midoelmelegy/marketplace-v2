@@ -146,19 +146,6 @@ const HamburgerMenu = () => {
                   pt: '24px',
                 }}
               >
-                Explore
-              </Text>
-            </Link>
-            <Link href="/ethereum/collection-rankings" legacyBehavior>
-              <Text
-                style="subtitle1"
-                css={{
-                  borderBottom: '1px solid $gray4',
-                  cursor: 'pointer',
-                  pb: '$4',
-                  pt: '24px',
-                }}
-              >
                 Rankings
               </Text>
             </Link>

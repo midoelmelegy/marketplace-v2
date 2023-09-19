@@ -34,8 +34,8 @@ const developerSectionLinks = [
     href: '/collection-rankings',
   },
   {
-    name: 'Mainnets',
-    href: 'https://www.seaport.market',
+    name: 'Testnets',
+    href: 'https://testnets.seaport.market',
   },
 ]
 
