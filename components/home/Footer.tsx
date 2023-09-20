@@ -30,7 +30,7 @@ const SectionLink: FC<SectionLinkProps> = ({ name, href }) => (
 
 const developerSectionLinks = [
   {
-    name: 'Trending Collections',
+    name: 'Trending',
     href: '/collection-rankings',
   },
   {
