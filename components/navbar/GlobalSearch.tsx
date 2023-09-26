@@ -264,6 +264,7 @@ const GlobalSearch = forwardRef<
     ) {
       setRecentResults([selectedResult, ...recentResults.slice(0, 4)])
     }
+    setShowSearchBox(false)
   }
 
   // Store recently selected results in local storage
