@@ -384,7 +384,7 @@ const TokenTableRow: FC<TokenTableRowProps> = ({
                 {token?.token?.collection?.name}
               </Text>
               <Text style="subtitle2" ellipsify>
-                #{token?.token?.tokenId}
+                {token?.token?.name || `#${token?.token?.tokenId}`}
               </Text>
             </Flex>
           </Flex>
@@ -720,7 +720,7 @@ const TokenTableRow: FC<TokenTableRowProps> = ({
                   />
                 </Flex>
                 <Text style="subtitle2" ellipsify>
-                  #{token?.token?.tokenId}
+                  {token?.token?.name || `#${token?.token?.tokenId}`}
                 </Text>
               </Flex>
             </Flex>
