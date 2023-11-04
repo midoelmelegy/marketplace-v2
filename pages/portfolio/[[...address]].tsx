@@ -64,6 +64,7 @@ const IndexPage: NextPage = () => {
   const [activityTypes, setActivityTypes] = useState<ActivityTypes>(['sale'])
   const [activityFiltersOpen, setActivityFiltersOpen] = useState(true)
   const [tokenFiltersOpen, setTokenFiltersOpen] = useState(false)
+  const [hideSpam, setHideSpam] = useState<boolean>(true)
   const [filterCollection, setFilterCollection] = useState<string | undefined>(
     undefined
   )
@@ -83,6 +84,7 @@ const IndexPage: NextPage = () => {
 
   let collectionQuery: Parameters<typeof useUserCollections>['1'] = {
     limit: 100,
+    excludeSpam: hideSpam,
   }
 
   const { chain } = useContext(ChainContext)
@@ -264,7 +266,6 @@ const IndexPage: NextPage = () => {
                         <TabsTrigger value="activity">Activity</TabsTrigger>
                       </TabsList>
                     </Flex>
-
                     <TabsContent value="items">
                       <Flex
                         css={{
@@ -275,6 +276,8 @@ const IndexPage: NextPage = () => {
                       >
                         {isSmallDevice ? (
                           <MobileTokenFilters
+                            hideSpam={hideSpam}
+                            setHideSpam={setHideSpam}
                             collections={collections}
                             filterCollection={filterCollection}
                             setFilterCollection={setFilterCollection}
@@ -282,6 +285,8 @@ const IndexPage: NextPage = () => {
                           />
                         ) : (
                           <TokenFilters
+                            hideSpam={hideSpam}
+                            setHideSpam={setHideSpam}
                             isLoading={collectionsLoading}
                             isOwner={isOwner}
                             open={tokenFiltersOpen}
@@ -341,6 +346,7 @@ const IndexPage: NextPage = () => {
                             )}
                           </Flex>
                           <TokenTable
+                            hideSpam={hideSpam}
                             ref={tokenTableRef}
                             isLoading={collectionsLoading}
                             address={address}
