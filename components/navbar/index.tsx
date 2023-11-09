@@ -146,6 +146,9 @@ const Navbar = () => {
               ml: '$5',
             }}
           >
+            <Link href={`/${routePrefix}`}>
+              <NavItem>Trending</NavItem>
+            </Link>
             <Link href={`/${routePrefix}/collections/trending`}>
               <NavItem>Trending</NavItem>
             </Link>
