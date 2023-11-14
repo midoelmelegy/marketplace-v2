@@ -261,6 +261,7 @@ export default ({
                       address={
                         token?.market?.floorAsk?.price?.currency?.contract
                       }
+                      borderRadius='100%'
                       textStyle="h6"
                       css={{
                         textOverflow: 'ellipsis',
