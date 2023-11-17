@@ -170,7 +170,7 @@ export const AccountSidebar: FC = () => {
                     </CopyText>
                   </Flex>
                   <Grid css={{ gridTemplateColumns: '1fr 1fr', mt: 32 }}>
-                    <Link href="/portfolio?tab=items">
+                    <Link href={`/portfolio/${address || ''}?tab=items`} replace={true}>
                       <Flex
                         align="center"
                         css={{
@@ -184,7 +184,7 @@ export const AccountSidebar: FC = () => {
                         <Text style="body1">My Items</Text>
                       </Flex>
                     </Link>
-                    <Link href="/portfolio?tab=listings">
+                    <Link href={`/portfolio/${address || ''}?tab=listings`} replace={true}>
                       <Flex
                         align="center"
                         css={{
@@ -198,7 +198,7 @@ export const AccountSidebar: FC = () => {
                         <Text style="body1">Listings</Text>
                       </Flex>
                     </Link>
-                    <Link href="/portfolio?tab=offers">
+                    <Link href={`/portfolio/${address || ''}?tab=offers`} replace={true}>
                       <Flex
                         align="center"
                         css={{
@@ -212,7 +212,7 @@ export const AccountSidebar: FC = () => {
                         <Text style="body1">Offers Made</Text>
                       </Flex>
                     </Link>
-                    <Link href="/portfolio?tab=activity">
+                    <Link href={`/portfolio/${address || ''}?tab=activity`} replace={true}>
                       <Flex
                         align="center"
                         css={{
