@@ -40,7 +40,8 @@ export const FeaturedCards: React.FC<FeaturedCardsProps> = ({
           align="center"
           css={{
             width: '100%',
-            overflowY: 'scroll',
+            overflowX: 'auto',
+            overflowY: 'hidden',
             gap: '12px',
           }}
         >
