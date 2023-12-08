@@ -149,7 +149,48 @@ const HamburgerMenu = () => {
                 Trending
               </Text>
             </Link>
+            <Link href="/ethereum/collections/trending" legacyBehavior>
+              <Text
+                style="subtitle1"
+                css={{
+                  borderBottom: '1px solid $gray4',
+                  cursor: 'pointer',
+                  pb: '$4',
+                  pt: '24px',
+                }}
+              >
+                Trending Collections
+              </Text>
+            </Link>
 
+            <Link href="/ethereum/mints/trending" legacyBehavior>
+              <Text
+                style="subtitle1"
+                css={{
+                  borderBottom: '1px solid $gray4',
+                  cursor: 'pointer',
+                  pb: '$4',
+                  pt: '24px',
+                }}
+              >
+                Trending Mints
+              </Text>
+            </Link>
+
+
+            <Anchor
+              href="https://docs.reservoir.tools/docs"
+              target="_blank"
+              css={{
+                borderBottom: '1px solid $gray4',
+                cursor: 'pointer',
+                pb: '$4',
+                pt: '24px',
+                width: '100%',
+              }}
+            >
+              <Text style="subtitle1">Developers</Text>
+            </Anchor>
             <Link href="/portfolio" legacyBehavior>
               <Flex
                 direction="column"
