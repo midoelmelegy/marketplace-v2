@@ -196,15 +196,16 @@ function MyApp({
             source: source,
             normalizeRoyalties: NORMALIZE_ROYALTIES,
             disablePoweredByReservoir: true,
-            marketplaceFees: MARKETPLACE_FEES,
+            //marketplaceFees: MARKETPLACE_FEES,
             //CONFIGURABLE: Set your marketplace fee and recipient, (fee is in BPS)
             // Note that this impacts orders created on your marketplace (offers/listings)
             // feesOnTopBps={["0xabc:50", "0xdef:50"]}
             // feesOnTopFixed={["0xabc:50", "0xdef:10000000000000000"]}
+            marketplaceFees: ['0x4c31e558393312a1d3bE14C45A3656A2e915F53D:250'],
           }}
           theme={reservoirKitTheme}
         >
-          <CartProvider feesOnTopBps={["0x4c31e558393312a1d3bE14C45A3656A2e915F53D:50"]}>
+          <CartProvider feesOnTopBps={["0x4c31e558393312a1d3bE14C45A3656A2e915F53D:250"]}>
             <WebsocketContextProvider>
               <Tooltip.Provider>
                 <RainbowKitProvider
