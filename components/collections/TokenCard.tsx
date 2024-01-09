@@ -15,7 +15,6 @@ import Link from 'next/link'
 import { SyntheticEvent, useContext } from 'react'
 import { MutatorCallback } from 'swr'
 import { formatNumber } from 'utils/numbers'
-import { formatUnits } from 'viem'
 import { Address } from 'wagmi'
 
 type TokenCardProps = {
@@ -44,8 +43,7 @@ export default ({
   showSource = true,
 }: TokenCardProps) => {
   const { addToast } = useContext(ToastContext)
-  const isSmallDevice = useMediaQuery({ maxWidth: 900 })
-  const mediaType = extractMediaType(token?.token)
+  const mediaType = extractMediaType(token?.token?.media)
   const showMedia =
     mediaType === 'mp4' ||
     mediaType === 'mp3' ||
@@ -340,7 +338,7 @@ export default ({
         >
           <BuyNow
             tokenId={token.token?.tokenId}
-            collectionId={token.token?.collection?.id}
+            contract={token.token?.contract}
             mutate={mutate}
             buttonCss={{
               justifyContent: 'center',
