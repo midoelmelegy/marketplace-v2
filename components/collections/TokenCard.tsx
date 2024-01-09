@@ -43,6 +43,7 @@ export default ({
   showSource = true,
 }: TokenCardProps) => {
   const { addToast } = useContext(ToastContext)
+  const isSmallDevice = useMediaQuery({ maxWidth: 900 })
   const mediaType = extractMediaType(token?.token?.media)
   const showMedia =
     mediaType === 'mp4' ||
