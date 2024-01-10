@@ -1,5 +1,6 @@
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faBolt} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useMediaQuery } from 'react-responsive'
 import {
   extractMediaType,
   TokenMedia,
@@ -42,6 +43,7 @@ export default ({
   showSource = true,
 }: TokenCardProps) => {
   const { addToast } = useContext(ToastContext)
+  const isSmallDevice = useMediaQuery({ maxWidth: 900 })
   const mediaType = extractMediaType(token?.token?.media)
   const showMedia =
     mediaType === 'mp4' ||
@@ -323,10 +325,15 @@ export default ({
           css={{
             width: '100%',
             transition: 'bottom 0.25s ease-in-out',
-            position: 'absolute',
-            bottom: -44,
-            left: 0,
-            right: 0,
+            '@sm': {
+              position: 'relative'
+            },
+            '@lg': {
+              position: 'absolute',
+              bottom: -44,
+              left: 0,
+              right: 0,
+            },
             gap: 1,
           }}
         >
@@ -341,7 +348,16 @@ export default ({
             buttonProps={{
               corners: 'square',
             }}
-            buttonChildren="Buy Now"
+            buttonChildren={
+              isSmallDevice ? (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <FontAwesomeIcon icon={faBolt} style={{ marginRight: '5px' }} />
+                  <span>Buy</span>
+                </div>
+              ) : (
+                "Buy Now"
+              )
+            }
           />
           {addToCartEnabled ? (
             <AddToCart
