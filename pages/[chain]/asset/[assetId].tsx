@@ -387,7 +387,7 @@ const IndexPage: NextPage<Props> = ({ assetId, ssr }) => {
                 }
                 setIsRefreshing(true)
                 fetcher(
-                  `${process.env.NEXT_PUBLIC_PROXY_URL}${proxyApi}/tokens/refresh/v1`,
+                  `${window.location.origin}/${proxyApi}/tokens/refresh/v1`,
                   undefined,
                   {
                     method: 'POST',
