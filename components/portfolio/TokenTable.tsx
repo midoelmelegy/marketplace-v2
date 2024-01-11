@@ -500,7 +500,7 @@ const TokenTableRow: FC<TokenTableRowProps> = ({
                 }
                 setIsRefreshing(true)
                 fetcher(
-                  `${window.location.origin}/${proxyApi}/tokens/refresh/v1`,
+                  `${process.env.NEXT_PUBLIC_PROXY_URL}${proxyApi}/tokens/refresh/v1`,
                   undefined,
                   {
                     method: 'POST',
@@ -928,7 +928,7 @@ const TokenTableRow: FC<TokenTableRowProps> = ({
                   }
                   setIsRefreshing(true)
                   fetcher(
-                    `${window.location.origin}/${proxyApi}/tokens/refresh/v1`,
+                    `${process.env.NEXT_PUBLIC_PROXY_URL}${proxyApi}/tokens/refresh/v1`,
                     undefined,
                     {
                       method: 'POST',
