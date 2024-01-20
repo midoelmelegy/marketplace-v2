@@ -57,6 +57,12 @@ export default ({
 
   const is1155 = token?.token?.kind === 'erc1155'
 
+  const isBlurSource = token?.market?.floorAsk?.source?.name === 'Blur'
+  const isBelowSolverCapacity =
+    BigInt(token?.market?.floorAsk?.price?.amount?.raw || 0) <
+    25000000000000000000n
+  const intentFillingEnabled = !is1155 && isBlurSource && isBelowSolverCapacity
+
   return (
     <Box
       css={{
@@ -340,6 +346,7 @@ export default ({
           <BuyNow
             tokenId={token.token?.tokenId}
             contract={token.token?.contract}
+            executionMethod={intentFillingEnabled ? 'intent' : undefined}
             mutate={mutate}
             buttonCss={{
               justifyContent: 'center',
